@@ -2,6 +2,30 @@
   "schemaVersion": 2,
   "targets": [
     {
+      "profileId": "b6q-F741BXXU4EZIH",
+      "manufacturer": "samsung",
+      "model": "SM-F741B",
+      "device": "b6q",
+      "kernelRelease": "6.1.162-android14-11-34343818-abF741BXXU4EZIH",
+      "kernelVersion": "Linux version 6.1.162-android14-11-34343818-abF741BXXU4EZIH #1 SMP PREEMPT Sat Sep 19 11:49:51 UTC 2026",
+      "kernelBuildVersion": "#1 SMP PREEMPT Sat Sep 19 11:49:51 UTC 2026",
+      "buildDisplay": "CP2A.260605.016.F741BXXU4EZIH",
+      "buildFingerprint": "samsung/b6qxxx/b6q:17/CP2A.260605.016/F741BXXU4EZIH:user/release-keys",
+      "sdk": 37,
+      "abi": "arm64-v8a",
+      "pageSize": 4096,
+      "exploit": {
+        "url": "https://raw.githubusercontent.com/yahya9090/Root-My-Galaxy-Payloads/main/artifacts/b6q-F741BXXU4EZIH/cve-2026-43499-app.so",
+        "size": 104128
+      },
+      "kernelsu": {
+        "url": "https://raw.githubusercontent.com/yahya9090/Root-My-Galaxy-Payloads/main/kernelsu/ksud-e3q-S928BXXU6EZIF-kdp",
+        "size": 5107192,
+        "kmi": "android14-6.1",
+        "managerPackage": "me.weishu.kernelsu"
+      }
+    },
+    {
       "profileId": "pa3q-S938NKSUACZF1",
       "manufacturer": "samsung",
       "model": "SM-S938N",

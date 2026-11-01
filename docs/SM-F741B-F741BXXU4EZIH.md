@@ -22,3 +22,13 @@
      `patch #2 ret -1`
    - Cause: `libexp.so` at instruction `0x1712c` loaded literal string `[vendorfile]` instead of `/vendor/lib64/libstagefrighthw.so`.
    - Fix: Instruction patched to `add x0, x0, #9` via `tools/patch_dirtyfrag_stage2.py`, successfully targeting `/vendor/lib64/libstagefrighthw.so` (31,928 bytes).
+
+4. **Pixel Transformation Suite (Zero Full Reboots):**
+   - **LSPosed Bridge (`dev.pixel.oneui.bridge`):**
+     - `QSTileViewImpl`: Enforces Material 3 Expressive 80dp pill geometry (28dp radius, 16dp horizontal padding).
+     - `ScrimController` & `SecQpBlurController`: Suppresses Samsung OEM tint curves and maps shade background to `@android:color/system_neutral1_900` (`#1B1B1F`) and active tiles to `@android:color/system_accent1_100` (`#E1E0FF`).
+     - `OverviewProxyService`: Forces `config_recentsComponentName` to return `app.lawnchair/com.android.quickstep.TouchInteractionService`.
+     - `system_server`: Injects runtime privileged permissions (`STATUS_BAR_SERVICE`, `CONTROL_REMOTE_APP_TRANSITION_ANIMATIONS`, `MANAGE_ACTIVITY_TASKS`) and sets `PRIVATE_FLAG_PRIVILEGED` on non-system launchers without partition writes.
+     - `Cover Screen Continuity`: Detects display ID != 0 (Flex Window subscreen) and delegates launcher handling to `com.sec.android.app.launcher` while maintaining Lawnchair on the main foldable display.
+   - **Hot-Reload:**
+     - All modules apply dynamically via `su -c "pkill -f com.android.systemui"`. Zero full kernel reboots required.

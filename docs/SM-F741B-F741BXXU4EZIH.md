@@ -20,8 +20,10 @@
 3. **DirtyFrag Stage 2 Resolution (Root Without Exploit):**
    - The secondary loader in Root My Galaxy Next (`dev.rushiranpise.rmgnext`) failed at Step 3 (`patch_ko`):
      `patch #2 ret -1`
-   - Cause: `libexp.so` at instruction `0x1712c` loaded literal string `[vendorfile]` instead of `/vendor/lib64/libstagefrighthw.so`.
-   - Fix: Instruction patched to `add x0, x0, #9` via `tools/patch_dirtyfrag_stage2.py`, successfully targeting `/vendor/lib64/libstagefrighthw.so` (31,928 bytes).
+   - Cause 1: `libexp.so` at instruction `0x1712c` loaded literal placeholder string `[vendorfile]` instead of `/vendor/lib64/libstagefrighthw.so`.
+   - Fix 1: Instruction patched to `add x0, x0, #9` via `tools/patch_dirtyfrag_stage2.py` (and upstream `dfr/src/main/jni/exp.c` patched to `target_lib_path` on fork `yahya9090/Root-My-Galaxy-Next`), targeting `/vendor/lib64/libstagefrighthw.so` (31,928 bytes).
+   - Cause 2 (Certificate Injection Failure): Embedded `assets/stage2.apk` was previously staged unsigned. Android Package Manager rejected the unsigned binary (`INSTALL_PARSE_FAILED_NO_CERTIFICATES`), and `SysKey.keyHexFromApk` crashed with empty signers during certificate injection into `android.uid.system`.
+   - Fix 2: Both `RootMyGalaxyNext` and `stage2.apk` (helper) are signed with the matching debug keystore (SHA256: `22:7D:50:C3:C9:E3:40:62:94:19:F4:16:B3:5D:9A:9B:B3:27:FC:95:8A:7B:0A:C7:AF:CA:FE:F5:09:B8:3A:FC`). PMS reconciles the shared user cleanly, enabling persistent auto-root at boot.
 
 4. **Pixel Transformation Suite (Zero Full Reboots):**
    - **LSPosed Bridge (`dev.pixel.oneui.bridge`):**

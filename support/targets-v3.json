@@ -2,6 +2,30 @@
   "schemaVersion": 3,
   "payloads": [
     {
+      "payloadId": "b6q-F741BXXU4EZIH",
+      "displayName": "Galaxy Z Flip 6 (SM-F741B) | Kernel 6.1.162 EZIH",
+      "models": [
+        "SM-F741B",
+        "SM-F741N",
+        "SM-F741U",
+        "SM-F741U1",
+        "SM-F741W",
+        "SM-F7410"
+      ],
+      "kernelVersions": [
+        "6.1.162"
+      ],
+      "requiresFreshP0Session": true,
+      "exploit": {
+        "url": "https://raw.githubusercontent.com/yahya9090/Root-My-Galaxy-Payloads/main/artifacts/e3q-S928BXXU6EZIF/cve-2026-43499-app.so",
+        "size": 104128
+      },
+      "kernelsu": {
+        "url": "https://raw.githubusercontent.com/yahya9090/Root-My-Galaxy-Payloads/main/kernelsu/ksud-e3q-S928BXXU6EZIF-kdp",
+        "size": 5107192
+      }
+    },
+    {
       "payloadId": "galaxy-s25-series-2026-06-07",
       "displayName": "Galaxy S25 series | Kernel 6.6.98",
       "models": [
@@ -408,34 +432,6 @@
       "kernelsu": {
         "url": "https://raw.githubusercontent.com/BuSung-dev/Root-My-Galaxy-Payloads/main/kernelsu/ksud-e3q-S9280ZCS6DZF2-kdp",
         "size": 4879856
-      }
-    },
-    {
-      "payloadId": "galaxy-zflip6-f741b-ezih-6.1.162",
-      "displayName": "Galaxy Z Flip 6 / S24 Ultra (SM-F741B / SM-S928B) | Kernel 6.1.162",
-      "models": [
-        "SM-F741B",
-        "SM-F741N",
-        "SM-F741U",
-        "SM-F741U1",
-        "SM-F741W",
-        "SM-F7410",
-        "SM-S928B",
-        "SM-S9280",
-        "SM-S928U",
-        "SM-S928U1"
-      ],
-      "kernelVersions": [
-        "6.1.162"
-      ],
-      "requiresFreshP0Session": true,
-      "exploit": {
-        "url": "https://raw.githubusercontent.com/yahya9090/Root-My-Galaxy-Payloads/main/artifacts/e3q-S928BXXU6EZIF/cve-2026-43499-app.so",
-        "size": 104128
-      },
-      "kernelsu": {
-        "url": "https://raw.githubusercontent.com/yahya9090/Root-My-Galaxy-Payloads/main/kernelsu/ksud-e3q-S928BXXU6EZIF-kdp",
-        "size": 5107192
       }
     },
     {
